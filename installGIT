@@ -1,0 +1,39 @@
+Pierwszy config
+
+
+#Po zainstalowaniu wprowadź te dwie komendy do terminala, uzupełniając je swoimi danymi:
+
+git config --global user.name <YOUR_NAME>
+git config --global user.email <YOUR_EMAIL>
+git config --global -l
+
+
+#utwórz klucz SSH, To spowoduje wygenerowanie nowej pary kluczy SSH (publicznego i prywatnego) w katalogu ~/.ssh. Następnie możesz dodać klucz publiczny do swojego konta GitHub, zgodnie z wcześniejszymi instrukcjami.
+
+ssh-keygen -t rsa -b 4096
+
+#najpierw upewnij się, że używasz poprawnej nazwy klucza SSH. W wielu przypadkach nazwa klucza prywatnego to id_rsa, ale może być inna, jeśli go zmieniłeś. Aby sprawdzić dostępne klucze, wykonaj polecenie:
+
+ls -al ~/.ssh
+
+
+#Check your SSH agent: Make sure that your SSH agent is running and your key is added to it. You can use the following command to check if your key is added:
+
+ssh-add -l
+
+
+#If your key is not listed, you can add it using:
+
+
+ssh-add ~/.ssh/your-private-key
+
+
+
+
+echo "# git-komendy" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Koziku/git-komendy.git
+git push -u origin main
